@@ -2,6 +2,6 @@
 
 ------------------------
 
-Course : Computer Ethics and Social Issues
+Course : CS489 Computer Ethics and Social Issues
 
 Team : 20140535 정해준, 20170441 은윤혜, 20170459 이선오
