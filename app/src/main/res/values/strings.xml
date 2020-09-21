@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BarcodeReader</string>
+    <string name="my_app">My App</string>
 </resources>
