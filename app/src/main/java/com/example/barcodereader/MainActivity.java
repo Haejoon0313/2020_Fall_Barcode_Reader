@@ -1,71 +1,45 @@
 package com.example.barcodereader;
 
 import android.os.Bundle;
+
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.zxing.ResultPoint;
-import com.journeyapps.barcodescanner.BarcodeCallback;
-import com.journeyapps.barcodescanner.BarcodeResult;
-import com.journeyapps.barcodescanner.CaptureManager;
-import com.journeyapps.barcodescanner.DecoratedBarcodeView;
-
-import android.widget.Toast;
-import java.util.List;
+import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    private CaptureManager capture;
-    private DecoratedBarcodeView BarcodeView;
+    private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        BarcodeView = (DecoratedBarcodeView) findViewById(R.id.barcode_scanner);
-
-        capture = new CaptureManager(this, BarcodeView);
-        capture.initializeFromIntent(this.getIntent(), savedInstanceState);
-        capture.decode();
-
-        BarcodeView.decodeContinuous(new BarcodeCallback() {
-            @Override
-            public void barcodeResult(BarcodeResult result) {
-                makeText(result.toString());
-            }
-
-            @Override
-            public void possibleResultPoints(List<ResultPoint> resultPoints) {
-            }
-        });
-    }
-
-    public void makeText(String result) {
-        Toast.makeText(this, "바코드 숫자: " + result, Toast.LENGTH_SHORT).show();
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.nav_search, R.id.nav_github)
+                .setDrawerLayout(drawer)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        capture.onResume();
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
     }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        capture.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        capture.onDestroy();
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        capture.onSaveInstanceState(outState);
-    }
-
 }
