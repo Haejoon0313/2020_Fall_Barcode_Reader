@@ -1,0 +1,7 @@
+
+참조: https://www.foodsafetykorea.go.kr/api/openApiInfo.do?menu_grp=MENU_GRP31&menu_no=656&show_cnt=10&start_idx=1&svc_no=I2570&svc_type_cd=API_TYPE06
+
+인증키: 69b8886551c8474c8e80
+
+요청주소: http://openapi.foodsafetykorea.go.kr/api/keyId/serviceId/dataType/startIdx/endIdx
+예시: http://openapi.foodsafetykorea.go.kr/api/인증키/서비스명/요청파일타입/요청시작위치/요청종료위치/BRCD_NO="바코드 넘버"
