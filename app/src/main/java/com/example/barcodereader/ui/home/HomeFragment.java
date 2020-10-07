@@ -21,12 +21,9 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         Button scan = root.findViewById(R.id.scan_button);
         scan.setOnClickListener(v -> BarcodeScan());
