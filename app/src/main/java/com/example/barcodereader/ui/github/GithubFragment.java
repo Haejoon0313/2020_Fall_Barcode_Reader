@@ -1,5 +1,7 @@
 package com.example.barcodereader.ui.github;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,14 @@ import com.example.barcodereader.R;
 public class GithubFragment extends Fragment {
 
     private GithubViewModel githubViewModel;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        String address = "https://github.com/Haejoon0313/2020_Fall_Barcode_Reader";
+        Intent OpenGitpage = new Intent(Intent.ACTION_VIEW, Uri.parse(address));
+        startActivity(OpenGitpage);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
