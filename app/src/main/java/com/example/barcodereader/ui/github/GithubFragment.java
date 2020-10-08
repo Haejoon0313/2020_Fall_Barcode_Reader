@@ -24,8 +24,8 @@ public class GithubFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         String address = "https://github.com/Haejoon0313/2020_Fall_Barcode_Reader";
-        Intent OpenGitPage = new Intent(Intent.ACTION_VIEW, Uri.parse(address));
-        startActivity(OpenGitPage);
+        Intent OpenGitpage = new Intent(Intent.ACTION_VIEW, Uri.parse(address));
+        startActivity(OpenGitpage);
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
