@@ -14,7 +14,6 @@ public class ServerConnection {
 
     final static String _serverURL = "http://127.0.0.1";
 
-
     public static Bundle requestInfo(String barcode) {
         Bundle bundle = new Bundle();
 

@@ -46,7 +46,7 @@ public class SearchFragment extends Fragment {
                 Toast.makeText(getActivity(), "Input should be a 13-digit number", Toast.LENGTH_SHORT).show();
             } else {
                 Bundle bundle = ServerConnection.requestInfo(number);
-                mainActivity.replaceFragment(bundle);
+                mainActivity.replaceFragment(false, bundle);
             }
         });
 

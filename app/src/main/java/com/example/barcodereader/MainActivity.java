@@ -48,8 +48,10 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void replaceFragment(Bundle bundle) {
+    public void replaceFragment(boolean isScan, Bundle bundle) {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        navController.navigate(R.id.action_nav_home_to_nav_result, bundle);
+        if (isScan) {
+            navController.navigate(R.id.action_nav_home_to_nav_result, bundle);
+        } else navController.navigate(R.id.action_nav_search_to_nav_result, bundle);
     }
 }

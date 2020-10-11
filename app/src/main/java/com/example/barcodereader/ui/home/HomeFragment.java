@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
 
         if (result.getContents() != null) {
             Bundle bundle = ServerConnection.requestInfo(result.getContents());
-            mainActivity.replaceFragment(bundle);
+            mainActivity.replaceFragment(true, bundle);
         } else {
             Toast.makeText(getActivity(), "Cancelled", Toast.LENGTH_SHORT).show();
             super.onActivityResult(requestCode, resultCode, data);
