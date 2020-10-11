@@ -53,13 +53,12 @@ public class HomeFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         Bundle bundle = new Bundle();
-        //bundle.putString("firmName", result.getContents());
-        bundle.putString("firmName", "남양");
+        bundle.putString("firmName", result.getContents());
+
         if (result.getContents() != null) {
             mainActivity.replaceFragment(bundle);
         } else {
-            mainActivity.replaceFragment(bundle);
-//            Toast.makeText(getActivity(), "Cancelled", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Cancelled", Toast.LENGTH_SHORT).show();
             super.onActivityResult(requestCode, resultCode, data);
         }
 
