@@ -1,5 +1,6 @@
 package com.example.barcodereader.ui.search;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,12 +9,29 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.barcodereader.MainActivity;
 import com.example.barcodereader.R;
 import com.example.barcodereader.http.ServerConnection;
 
 public class SearchFragment extends Fragment {
+
+    MainActivity mainActivity;
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        mainActivity = (MainActivity) getActivity();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mainActivity = null;
+    }
 
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -27,12 +45,11 @@ public class SearchFragment extends Fragment {
             if (number.length() != 13) {
                 Toast.makeText(getActivity(), "Input should be a 13-digit number", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getActivity(), "바코드 정보: " + number, Toast.LENGTH_SHORT).show();
-                ServerConnection.requestInfo(number);
+                Bundle bundle = ServerConnection.requestInfo(number);
+                mainActivity.replaceFragment(bundle);
             }
         });
 
         return root;
     }
-
 }

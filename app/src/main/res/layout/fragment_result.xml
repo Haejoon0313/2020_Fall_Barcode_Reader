@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/hello_world"
+    android:id="@+id/result_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -14,21 +14,42 @@
         android:id="@+id/firm_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#BE90EC"
         android:text="Firm name"
+        android:gravity="center"
         android:textSize="50sp" />
 
-    <TextView
-        android:id="@+id/firm_nation"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Firm nation"
-        android:textSize="50sp" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/firm_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Firm info"
-        android:textSize="50sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
 
+        <TextView
+            android:id="@+id/firm_nation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Firm nation"
+            android:layout_marginLeft="4dp"
+            android:textSize="40sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/firm_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Firm info"
+            android:layout_marginLeft="4dp"
+            android:textSize="40sp" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
