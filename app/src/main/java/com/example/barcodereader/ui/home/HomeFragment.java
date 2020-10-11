@@ -1,25 +1,40 @@
 package com.example.barcodereader.ui.home;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 
+import com.example.barcodereader.MainActivity;
 import com.example.barcodereader.R;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class HomeFragment extends Fragment {
+
+    MainActivity mainActivity;
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        mainActivity = (MainActivity) getActivity();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mainActivity = null;
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -37,10 +52,14 @@ public class HomeFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        Bundle bundle = new Bundle();
+        //bundle.putString("firmName", result.getContents());
+        bundle.putString("firmName", "남양");
         if (result.getContents() != null) {
-            Toast.makeText(getActivity(), "바코드 정보:" + result.getContents(), Toast.LENGTH_SHORT).show();
+            mainActivity.replaceFragment(bundle);
         } else {
-            Toast.makeText(getActivity(), "Cancelled", Toast.LENGTH_SHORT).show();
+            mainActivity.replaceFragment(bundle);
+//            Toast.makeText(getActivity(), "Cancelled", Toast.LENGTH_SHORT).show();
             super.onActivityResult(requestCode, resultCode, data);
         }
 

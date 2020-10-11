@@ -2,8 +2,13 @@ package com.example.barcodereader;
 
 import android.os.Bundle;
 
+import com.example.barcodereader.ui.home.HomeFragment;
+import com.example.barcodereader.ui.home.ResultFragment;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -41,5 +46,10 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void replaceFragment(Bundle bundle) {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController.navigate(R.id.action_nav_home_to_nav_result, bundle);
     }
 }
