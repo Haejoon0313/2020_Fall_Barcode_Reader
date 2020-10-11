@@ -12,16 +12,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import com.example.barcodereader.MainActivity;
 import com.example.barcodereader.R;
-import com.example.barcodereader.ServerConnection;
+import com.example.barcodereader.http.ServerConnection;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class HomeFragment extends Fragment {
 
@@ -56,10 +52,9 @@ public class HomeFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        Bundle bundle = new Bundle();
-        bundle.putString("firmName", result.getContents());
 
         if (result.getContents() != null) {
+            Bundle bundle = ServerConnection.requestInfo(result.getContents());
             mainActivity.replaceFragment(bundle);
         } else {
             Toast.makeText(getActivity(), "Cancelled", Toast.LENGTH_SHORT).show();

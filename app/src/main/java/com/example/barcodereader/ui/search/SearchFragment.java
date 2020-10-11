@@ -1,28 +1,17 @@
 package com.example.barcodereader.ui.search;
 
-import android.content.DialogInterface;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.example.barcodereader.R;
-import com.example.barcodereader.ServerConnection;
-
-import java.net.MalformedURLException;
-import java.net.URL;
+import com.example.barcodereader.http.ServerConnection;
 
 public class SearchFragment extends Fragment {
 
