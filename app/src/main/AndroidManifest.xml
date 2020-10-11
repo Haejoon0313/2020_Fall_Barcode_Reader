@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ui.result.ResultFragment"></activity>
         <activity
             android:name=".MainActivity"
             android:label="BarcodeReader"
@@ -31,7 +32,7 @@
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"
             android:stateNotNeeded="true"
-            tools:replace="android:screenOrientation"></activity>
+            tools:replace="android:screenOrientation" />
     </application>
 
 </manifest>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,13 +7,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:openDrawer="start">
 
     <TextView
         android:id="@+id/firm_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:text="Firm name"/>
+        android:text="Firm name"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/firm_nation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Firm nation"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/firm_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Firm info"
+        android:textSize="50sp" />
 
 </LinearLayout>

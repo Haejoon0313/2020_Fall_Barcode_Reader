@@ -19,6 +19,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.barcodereader.R;
+import com.example.barcodereader.ServerConnection;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class SearchFragment extends Fragment {
 
@@ -34,7 +38,8 @@ public class SearchFragment extends Fragment {
             if (number.length() != 13) {
                 Toast.makeText(getActivity(), "Input should be a 13-digit number", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getActivity(), "바코드 정보:" + number, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "바코드 정보: " + number, Toast.LENGTH_SHORT).show();
+                ServerConnection.requestInfo(number);
             }
         });
 

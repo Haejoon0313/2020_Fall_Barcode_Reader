@@ -16,8 +16,12 @@ import androidx.navigation.Navigation;
 
 import com.example.barcodereader.MainActivity;
 import com.example.barcodereader.R;
+import com.example.barcodereader.ServerConnection;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class HomeFragment extends Fragment {
 
@@ -64,3 +68,4 @@ public class HomeFragment extends Fragment {
 
     }
 }
+
