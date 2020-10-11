@@ -16,8 +16,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.barcodereader.R;
+import com.example.barcodereader.ServerConnection;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class HomeFragment extends Fragment {
 
@@ -38,11 +42,14 @@ public class HomeFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result.getContents() != null) {
-            Toast.makeText(getActivity(), "바코드 정보:" + result.getContents(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "바코드 정보: " + result.getContents(), Toast.LENGTH_SHORT).show();
+            ServerConnection.requestInfo(result.getContents());
         } else {
             Toast.makeText(getActivity(), "Cancelled", Toast.LENGTH_SHORT).show();
             super.onActivityResult(requestCode, resultCode, data);
         }
 
     }
+
+
 }
