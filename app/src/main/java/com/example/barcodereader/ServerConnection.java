@@ -2,6 +2,11 @@ package com.example.barcodereader;
 
 import android.content.Intent;
 
+import androidx.fragment.app.Fragment;
+
+import com.example.barcodereader.ui.home.HomeFragment;
+import com.example.barcodereader.ui.result.ResultFragment;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -24,7 +29,7 @@ public class ServerConnection {
         // listen info
 
         // print info
-
+        
     }
 
 }
