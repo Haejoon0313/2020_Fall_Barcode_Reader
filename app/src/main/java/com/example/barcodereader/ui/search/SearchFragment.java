@@ -16,6 +16,8 @@ import com.example.barcodereader.MainActivity;
 import com.example.barcodereader.R;
 import com.example.barcodereader.http.ServerConnection;
 
+import java.io.IOException;
+
 public class SearchFragment extends Fragment {
 
     MainActivity mainActivity;
@@ -45,7 +47,12 @@ public class SearchFragment extends Fragment {
             if (number.length() != 13) {
                 Toast.makeText(getActivity(), "Input should be a 13-digit number", Toast.LENGTH_SHORT).show();
             } else {
-                Bundle bundle = ServerConnection.requestInfo(number);
+                Bundle bundle = null;
+                try {
+                    bundle = ServerConnection.requestInfo(number);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 mainActivity.replaceFragment(false, bundle);
             }
         });

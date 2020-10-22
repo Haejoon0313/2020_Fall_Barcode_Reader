@@ -19,6 +19,8 @@ import com.example.barcodereader.http.ServerConnection;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.io.IOException;
+
 public class HomeFragment extends Fragment {
 
     MainActivity mainActivity;
@@ -54,7 +56,12 @@ public class HomeFragment extends Fragment {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
 
         if (result.getContents() != null) {
-            Bundle bundle = ServerConnection.requestInfo(result.getContents());
+            Bundle bundle = null;
+            try {
+                bundle = ServerConnection.requestInfo(result.getContents());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             mainActivity.replaceFragment(true, bundle);
         } else {
             Toast.makeText(getActivity(), "Cancelled", Toast.LENGTH_SHORT).show();

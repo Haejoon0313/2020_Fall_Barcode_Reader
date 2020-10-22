@@ -20,8 +20,15 @@ public class ResultFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_result, container, false);
 
-        final TextView textView = root.findViewById(R.id.firm_name);
-        textView.setText(getArguments().getString("firmName"));
+        final TextView nameView = root.findViewById(R.id.firm_name);
+        nameView.setText(getArguments().getString("firmName"));
+
+        final TextView nationView = root.findViewById(R.id.firm_nation);
+        nationView.setText(getArguments().getString("firmNation"));
+
+        final TextView infoView = root.findViewById(R.id.firm_info);
+        infoView.setText(getArguments().getString("firmInfo"));
+
         return root;
     }
 }
