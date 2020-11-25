@@ -3,6 +3,7 @@ package com.example.barcodereader.ui.home;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +40,7 @@ public class ResultFragment extends Fragment {
                 final TextView newsTitleView = root.findViewById(news_title[i]);
                 final TextView newsDateView = root.findViewById(news_date[i]);
                 newsTitleView.setText(newsContents[0]);
-                newsDateView.setText(newsContents[1]);
+                newsDateView.setText(betterDateFormat(newsContents[1]));
                 newsTitleView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -51,5 +52,13 @@ public class ResultFragment extends Fragment {
         }
 
         return root;
+    }
+
+    private String betterDateFormat(String rawDate){
+        String[] parseDate = rawDate.split(" ");
+
+        String newDate = parseDate[2]+" "+parseDate[1]+", "+parseDate[3];
+
+        return newDate;
     }
 }
