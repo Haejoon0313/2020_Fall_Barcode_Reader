@@ -15,9 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#BE90EC"
-        android:text="Firm name"
-        android:gravity="center"
-        android:textSize="50sp" />
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="@string/firm_name"
+        android:textAlignment="center"
+        android:textSize="30sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,26 +31,119 @@
             android:orientation="vertical"
             android:padding="5dp">
 
-        <TextView
-            android:id="@+id/firm_nation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Firm nation"
-            android:layout_marginLeft="4dp"
-            android:textSize="40sp" />
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="8dp"
+                android:text="@string/item_name"
+                android:textSize="20sp" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2px"
+                android:layout_height="2dp"
                 android:background="@color/colorPrimaryDark" />
 
-        <TextView
-            android:id="@+id/firm_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Firm info"
-            android:layout_marginLeft="4dp"
-            android:textSize="40sp" />
+            <TextView
+                android:id="@+id/news_title0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:text="@string/firm_news"
+                android:textAlignment="viewStart"
+                android:textColor="#3F51B5"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/news_date0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:text="@string/date"
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/news_title1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:text="@string/firm_news"
+                android:textAlignment="viewStart"
+                android:textColor="#3F51B5"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/news_date1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:text="@string/date"
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/news_title2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:text="@string/firm_news"
+                android:textAlignment="viewStart"
+                android:textColor="#3F51B5"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/news_date2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:text="@string/date"
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/news_title3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:text="@string/firm_news"
+                android:textAlignment="viewStart"
+                android:textColor="#3F51B5"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/news_date3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:text="@string/date"
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/news_title4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:text="@string/firm_news"
+                android:textAlignment="viewStart"
+                android:textColor="#3F51B5"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/news_date4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:text="@string/date"
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
 
         </LinearLayout>
     </ScrollView>

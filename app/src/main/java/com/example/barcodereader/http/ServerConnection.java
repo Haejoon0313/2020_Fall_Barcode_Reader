@@ -1,6 +1,7 @@
 package com.example.barcodereader.http;
 
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -27,14 +28,14 @@ public class ServerConnection {
                 String resultJSONData = getfromserver(barcode);
                 Bundle bun = postJSONparse(resultJSONData);
 
-                if(bun == null){
-                    resultbundle.putString("firmName", "결과를 찾을 수 없습니다.");
-                    resultbundle.putString("firmNation", "");
-                    resultbundle.putString("firmInfo", "");
+                if(bun.getString("firmName") == "null"){
+                    resultbundle.putString("firmName", "결과 없음");
+                    resultbundle.putString("itemName", "제품 검색 결과 없음");
+                    resultbundle.putBundle("firmNews", null);
                 }else{
                     resultbundle.putString("firmName", bun.getString("firmName"));
-                    resultbundle.putString("firmNation", "국가: 대한민국");
-                    resultbundle.putString("firmInfo", bun.getString("firmInfo"));
+                    resultbundle.putString("itemName", bun.getString("itemName"));
+                    resultbundle.putBundle("firmNews", bun.getBundle("firmNews"));
                 }
             }
         }.start();
@@ -94,16 +95,25 @@ public class ServerConnection {
         Bundle bundle = null;
 
         try {
-            JSONObject jsonBigObject = new JSONObject(JSONdata);
-            JSONArray jsonArray = new JSONArray(jsonBigObject.getString("Item"));
-            try{
-                JSONObject jsonObject = jsonArray.getJSONObject(0);
-                bundle = new Bundle();
-                bundle.putString("firmName", jsonObject.getString("COMPANYNAME"));
-                bundle.putString("firmInfo", "제품명: "+jsonObject.getString("ITEMNAME")+"\n\n기업 정보 추가 예정");
-            }catch (JSONException e){
-                e.printStackTrace();
+            JSONObject jsonObject = new JSONObject((JSONdata));
+
+            bundle = new Bundle();
+            bundle.putString("firmName", jsonObject.getString("companyname"));
+            bundle.putString("itemName", "제품명: "+jsonObject.getString("itemname"));
+
+            JSONArray newsJsonArray = jsonObject.getJSONArray("news");
+            JSONObject newsJsonObject;
+            Bundle newsBundle = new Bundle();
+
+            for(int i = 0; i < newsJsonArray.length(); i++) {
+                newsJsonObject = newsJsonArray.getJSONObject(i);
+
+                String[] newsContents = {newsJsonObject.getString("title"), newsJsonObject.getString("date"), newsJsonObject.getString("link")};
+
+                newsBundle.putStringArray("firmNews"+i, newsContents);
             }
+
+            bundle.putBundle("firmNews", newsBundle);
 
         } catch (JSONException e) {
             e.printStackTrace();
