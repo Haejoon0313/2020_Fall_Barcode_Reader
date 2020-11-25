@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="8dp"
-                android:text="@string/firm_news"
+                android:text=" "
                 android:textAlignment="viewStart"
                 android:textColor="#3F51B5"
                 android:textSize="15sp"
@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="8dp"
-                android:text="@string/date"
+                android:text=" "
                 android:textAlignment="viewStart"
                 android:textSize="12sp" />
 
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="8dp"
-                android:text="@string/firm_news"
+                android:text=" "
                 android:textAlignment="viewStart"
                 android:textColor="#3F51B5"
                 android:textSize="15sp"
@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="8dp"
-                android:text="@string/date"
+                android:text=" "
                 android:textAlignment="viewStart"
                 android:textSize="12sp" />
 
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="8dp"
-                android:text="@string/firm_news"
+                android:text=" "
                 android:textAlignment="viewStart"
                 android:textColor="#3F51B5"
                 android:textSize="15sp"
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="8dp"
-                android:text="@string/date"
+                android:text=" "
                 android:textAlignment="viewStart"
                 android:textSize="12sp" />
 
@@ -110,7 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="8dp"
-                android:text="@string/firm_news"
+                android:text=" "
                 android:textAlignment="viewStart"
                 android:textColor="#3F51B5"
                 android:textSize="15sp"
@@ -121,7 +121,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="8dp"
-                android:text="@string/date"
+                android:text=" "
                 android:textAlignment="viewStart"
                 android:textSize="12sp" />
 
@@ -130,7 +130,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="8dp"
-                android:text="@string/firm_news"
+                android:text=" "
                 android:textAlignment="viewStart"
                 android:textColor="#3F51B5"
                 android:textSize="15sp"
@@ -141,7 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="8dp"
-                android:text="@string/date"
+                android:text=" "
                 android:textAlignment="viewStart"
                 android:textSize="12sp" />
 
