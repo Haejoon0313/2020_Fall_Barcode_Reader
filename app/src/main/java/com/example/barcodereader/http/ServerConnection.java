@@ -98,8 +98,8 @@ public class ServerConnection {
             JSONObject jsonObject = new JSONObject((JSONdata));
 
             bundle = new Bundle();
-            bundle.putString("firmName", jsonObject.getString("COMPANYNAME"));
-            bundle.putString("itemName", "제품명: "+jsonObject.getString("ITEMNAME"));
+            bundle.putString("firmName", jsonObject.getString("companyname"));
+            bundle.putString("itemName", "제품명: "+jsonObject.getString("itemname"));
 
             JSONArray newsJsonArray = jsonObject.getJSONArray("news");
             JSONObject newsJsonObject;
