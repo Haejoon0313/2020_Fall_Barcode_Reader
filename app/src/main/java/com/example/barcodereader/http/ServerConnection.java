@@ -99,7 +99,7 @@ public class ServerConnection {
 
             bundle = new Bundle();
             bundle.putString("firmName", jsonObject.getString("companyname"));
-            bundle.putString("itemName", "제품명: "+jsonObject.getString("itemname"));
+            bundle.putString("itemName", "Product: "+jsonObject.getString("itemname"));
 
             JSONArray newsJsonArray = jsonObject.getJSONArray("news");
             JSONObject newsJsonObject;
