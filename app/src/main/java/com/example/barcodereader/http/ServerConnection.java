@@ -28,9 +28,9 @@ public class ServerConnection {
                 String resultJSONData = getfromserver(barcode);
                 Bundle bun = postJSONparse(resultJSONData);
 
-                if(bun == null){
+                if(bun.getString("firmName") == "null"){
                     resultbundle.putString("firmName", "결과 없음");
-                    resultbundle.putString("itemName", null);
+                    resultbundle.putString("itemName", "제품 검색 결과 없음");
                     resultbundle.putBundle("firmNews", null);
                 }else{
                     resultbundle.putString("firmName", bun.getString("firmName"));
@@ -118,8 +118,6 @@ public class ServerConnection {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
 
         return bundle;
     }
