@@ -1,6 +1,7 @@
 package com.example.barcodereader.http;
 
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -29,12 +30,12 @@ public class ServerConnection {
 
                 if(bun == null){
                     resultbundle.putString("firmName", "결과를 찾을 수 없습니다.");
-                    resultbundle.putString("firmNation", "");
-                    resultbundle.putString("firmInfo", "");
+                    resultbundle.putString("itemName", null);
+                    resultbundle.putStringArray("firmNews", null);
                 }else{
                     resultbundle.putString("firmName", bun.getString("firmName"));
-                    resultbundle.putString("firmNation", "국가: 대한민국");
-                    resultbundle.putString("firmInfo", bun.getString("firmInfo"));
+                    resultbundle.putString("itemName", bun.getString("itemName"));
+                    resultbundle.putStringArray("firmNews", bun.getStringArray("firmNews"));
                 }
             }
         }.start();
@@ -94,20 +95,28 @@ public class ServerConnection {
         Bundle bundle = null;
 
         try {
-            JSONObject jsonBigObject = new JSONObject(JSONdata);
-            JSONArray jsonArray = new JSONArray(jsonBigObject.getString("Item"));
-            try{
-                JSONObject jsonObject = jsonArray.getJSONObject(0);
-                bundle = new Bundle();
-                bundle.putString("firmName", jsonObject.getString("COMPANYNAME"));
-                bundle.putString("firmInfo", "제품명: "+jsonObject.getString("ITEMNAME")+"\n\n기업 정보 추가 예정");
-            }catch (JSONException e){
-                e.printStackTrace();
+            JSONObject jsonObject = new JSONObject((JSONdata));
+
+            bundle = new Bundle();
+            bundle.putString("firmName", jsonObject.getString("COMPANYNAME"));
+            bundle.putString("itemName", "제품명: "+jsonObject.getString("ITEMNAME"));
+
+            JSONArray newsJsonArray = jsonObject.getJSONArray("news");
+            JSONObject newsJsonObject;
+
+            for(int i = 0; i < newsJsonArray.length(); i++) {
+                newsJsonObject = newsJsonArray.getJSONObject(i);
+
+                String[] newsContents = {newsJsonObject.getString("title"), newsJsonObject.getString("date"), newsJsonObject.getString("description"), newsJsonObject.getString("link")};
+
+                bundle.putStringArray("firmNews"+i, newsContents);
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+
 
         return bundle;
     }

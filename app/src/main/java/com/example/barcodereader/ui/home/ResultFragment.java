@@ -23,11 +23,13 @@ public class ResultFragment extends Fragment {
         final TextView nameView = root.findViewById(R.id.firm_name);
         nameView.setText(getArguments().getString("firmName"));
 
-        final TextView nationView = root.findViewById(R.id.firm_nation);
-        nationView.setText(getArguments().getString("firmNation"));
+        final TextView itemView = root.findViewById(R.id.item_name);
+        itemView.setText(getArguments().getString("itemName"));
 
-        final TextView infoView = root.findViewById(R.id.firm_info);
-        infoView.setText(getArguments().getString("firmInfo"));
+        final TextView newsView = root.findViewById(R.id.firm_news);
+        String[] newsContents = getArguments().getStringArray("firmNews");
+
+        //newsView.setText(getArguments().getString("firmNews"));
 
         return root;
     }

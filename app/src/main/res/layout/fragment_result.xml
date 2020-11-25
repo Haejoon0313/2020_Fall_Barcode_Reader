@@ -15,8 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#BE90EC"
-        android:text="Firm name"
         android:gravity="center"
+        android:text="Firm name"
         android:textSize="50sp" />
 
     <ScrollView
@@ -29,26 +29,24 @@
             android:orientation="vertical"
             android:padding="5dp">
 
-        <TextView
-            android:id="@+id/firm_nation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Firm nation"
-            android:layout_marginLeft="4dp"
-            android:textSize="40sp" />
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Item name"
+                android:textSize="40sp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:background="@color/colorPrimaryDark" />
 
-        <TextView
-            android:id="@+id/firm_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Firm info"
-            android:layout_marginLeft="4dp"
-            android:textSize="40sp" />
+            <TextView
+                android:id="@+id/firm_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Firm news"
+                android:textSize="40sp" />
 
         </LinearLayout>
     </ScrollView>
