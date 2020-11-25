@@ -87,7 +87,7 @@ public class ServerConnection {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Log.d("resultData", resultData);
+        //Log.d("resultData", resultData);
         return resultData;
     }
 
