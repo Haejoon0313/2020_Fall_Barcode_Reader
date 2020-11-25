@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:background="#BE90EC"
         android:gravity="center"
-        android:text="Firm name"
+        android:text="@string/firm_name"
         android:textSize="50sp" />
 
     <ScrollView
@@ -33,20 +33,123 @@
                 android:id="@+id/item_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Item name"
+                android:text="@string/item_name"
                 android:textSize="40sp" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2px"
+                android:layout_height="2dp"
                 android:background="@color/colorPrimaryDark" />
 
             <TextView
-                android:id="@+id/firm_news"
+                android:id="@+id/news_title0"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Firm news"
-                android:textSize="40sp" />
+                android:layout_height="match_parent"
+                android:text="@string/firm_news"
+                android:textAlignment="viewStart"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/news_date0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/date"
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/view15"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/news_title1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/firm_news"
+                android:textAlignment="viewStart"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/news_date1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/date"
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/news_title2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/firm_news"
+                android:textAlignment="viewStart"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/news_date2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/date"
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/view12"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/news_title3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/firm_news"
+                android:textAlignment="viewStart"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/news_date3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/date"
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/view13"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/news_title4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/firm_news"
+                android:textAlignment="viewStart"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/news_date4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/date"
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/view16"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimaryDark" />
 
         </LinearLayout>
     </ScrollView>

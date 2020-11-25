@@ -29,13 +29,13 @@ public class ServerConnection {
                 Bundle bun = postJSONparse(resultJSONData);
 
                 if(bun == null){
-                    resultbundle.putString("firmName", "결과를 찾을 수 없습니다.");
+                    resultbundle.putString("firmName", "결과 없음");
                     resultbundle.putString("itemName", null);
-                    resultbundle.putStringArray("firmNews", null);
+                    resultbundle.putBundle("firmNews", null);
                 }else{
                     resultbundle.putString("firmName", bun.getString("firmName"));
                     resultbundle.putString("itemName", bun.getString("itemName"));
-                    resultbundle.putStringArray("firmNews", bun.getStringArray("firmNews"));
+                    resultbundle.putBundle("firmNews", bun.getBundle("firmNews"));
                 }
             }
         }.start();
@@ -103,14 +103,17 @@ public class ServerConnection {
 
             JSONArray newsJsonArray = jsonObject.getJSONArray("news");
             JSONObject newsJsonObject;
+            Bundle newsBundle = new Bundle();
 
             for(int i = 0; i < newsJsonArray.length(); i++) {
                 newsJsonObject = newsJsonArray.getJSONObject(i);
 
-                String[] newsContents = {newsJsonObject.getString("title"), newsJsonObject.getString("date"), newsJsonObject.getString("description"), newsJsonObject.getString("link")};
+                String[] newsContents = {newsJsonObject.getString("title"), newsJsonObject.getString("date"), newsJsonObject.getString("link")};
 
-                bundle.putStringArray("firmNews"+i, newsContents);
+                newsBundle.putStringArray("firmNews"+i, newsContents);
             }
+
+            bundle.putBundle("firmNews", newsBundle);
 
         } catch (JSONException e) {
             e.printStackTrace();

@@ -26,10 +26,15 @@ public class ResultFragment extends Fragment {
         final TextView itemView = root.findViewById(R.id.item_name);
         itemView.setText(getArguments().getString("itemName"));
 
-        final TextView newsView = root.findViewById(R.id.firm_news);
-        String[] newsContents = getArguments().getStringArray("firmNews");
+        Bundle newsBundle = getArguments().getBundle("firmNews");
+        String[] newsContents;
 
-        //newsView.setText(getArguments().getString("firmNews"));
+        newsContents = newsBundle.getStringArray("firmNews0");
+        final TextView newsTitle0View = root.findViewById(R.id.news_title0);
+        final TextView newsDate0View = root.findViewById(R.id.news_date0);
+        newsTitle0View.setText(newsContents[0]);
+        newsDate0View.setText(newsContents[1]);
+
 
         return root;
     }
