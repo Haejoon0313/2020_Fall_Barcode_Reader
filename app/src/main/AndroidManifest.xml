@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.barcodereader">
+    package="com.example.barcodereader" >
 
     <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
 
@@ -16,17 +16,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".ui.result.ResultFragment"></activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="BarcodeReader"
-            android:theme="@style/AppTheme.NoActionBar">
+        android:usesCleartextTraffic="true" >
+        <activity android:name=".SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.home.ResultFragment" />
+        <activity
+            android:name=".MainActivity"
+            android:label="BarcodeReader"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"

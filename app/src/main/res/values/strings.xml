@@ -16,4 +16,7 @@
     <string name="firm_name">Firm name</string>
     <string name="firm_news">Firm News</string>
     <string name="date">date</string>
+    <string name="title_activity_splash">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
