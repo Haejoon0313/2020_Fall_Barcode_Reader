@@ -10,7 +10,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.barcodereader"
+        applicationId 'com.example.EthiCode'
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
