@@ -1,6 +1,7 @@
 package com.example.barcodereader.ui.home;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -43,6 +44,7 @@ public class ResultFragment extends Fragment {
                 newsTitleView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        newsTitleView.setTextColor(Color.argb(255, 156, 39, 176));
                         Intent newsPageIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(newsContents[2]));
                         startActivity(newsPageIntent);
                     }

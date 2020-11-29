@@ -29,8 +29,8 @@ public class ServerConnection {
                 Bundle bun = postJSONparse(resultJSONData);
 
                 if(bun.getString("firmName") == "null"){
-                    resultbundle.putString("firmName", "결과 없음");
-                    resultbundle.putString("itemName", "제품 검색 결과 없음");
+                    resultbundle.putString("firmName", "No Result");
+                    resultbundle.putString("itemName", "");
                     resultbundle.putBundle("firmNews", null);
                 }else{
                     resultbundle.putString("firmName", bun.getString("firmName"));
@@ -87,7 +87,7 @@ public class ServerConnection {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //Log.d("resultData", resultData);
+        Log.d("RESULT DATA", resultData);
         return resultData;
     }
 
