@@ -32,8 +32,8 @@ public class ResultFragment extends Fragment {
         Bundle newsBundle = getArguments().getBundle("firmNews");
 
         if(newsBundle != null){
-            Integer[] news_title = {R.id.news_title0, R.id.news_title1, R.id.news_title2, R.id.news_title3, R.id.news_title4};
-            Integer[] news_date = {R.id.news_date0, R.id.news_date1, R.id.news_date2, R.id.news_date3, R.id.news_date4};
+            Integer[] news_title = {R.id.news_title0, R.id.news_title1, R.id.news_title2, R.id.news_title3, R.id.news_title4, R.id.news_title5, R.id.news_title6, R.id.news_title7, R.id.news_title8, R.id.news_title9};
+            Integer[] news_date = {R.id.news_date0, R.id.news_date1, R.id.news_date2, R.id.news_date3, R.id.news_date4, R.id.news_date5, R.id.news_date6, R.id.news_date7, R.id.news_date8, R.id.news_date9};
 
             for(int i = 0; i < newsBundle.size(); i++){
                 String[] newsContents = newsBundle.getStringArray("firmNews"+i);
