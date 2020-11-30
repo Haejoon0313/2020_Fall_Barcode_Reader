@@ -63,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="8dp"
-                android:text="There is no result..."
+                android:text="No Article Found..."
                 android:textAlignment="viewStart"
                 android:textColor="#3F51B5"
                 android:textSize="15sp"
@@ -151,6 +151,106 @@
 
             <TextView
                 android:id="@+id/news_date4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:text=" "
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/news_title5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:text=" "
+                android:textAlignment="viewStart"
+                android:textColor="#3F51B5"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/news_date5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:text=" "
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/news_title6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:text=" "
+                android:textAlignment="viewStart"
+                android:textColor="#3F51B5"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/news_date6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:text=" "
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/news_title7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:text=" "
+                android:textAlignment="viewStart"
+                android:textColor="#3F51B5"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/news_date7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:text=" "
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/news_title8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:text=" "
+                android:textAlignment="viewStart"
+                android:textColor="#3F51B5"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/news_date8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:text=" "
+                android:textAlignment="viewStart"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/news_title9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:text=" "
+                android:textAlignment="viewStart"
+                android:textColor="#3F51B5"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/news_date9"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="8dp"
